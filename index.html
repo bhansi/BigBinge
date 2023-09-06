@@ -1,51 +1,84 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>BigBinge</title>
-    </head>
-    <body>
-        <h1>Welcome to BigBinge!</h1>
-        <p>How would you like to find your next binge session?</p>
+<head>
+    <title>BigBinge</title>
 
-        <input type="checkbox" name="cbEpisodeLength" id="cbEpisodeLength">
-        <label for="cbEpisodeLength">Length per episode</label>
 
-        <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
-        <label for="cbEpisodeQuantity">Number of episodes</label>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <h1 class="text-4xl mb-4">Welcome to BigBinge!</h1>
+    <p class="mb-4">How would you like to find your next binge session?</p>
 
-        <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
-        <label for="cbEpisodeGenre">Genre</label>
+    <form id="searchForm" class="mb-8">
+        <div class="mb-4">
+            <input type="checkbox" name="cbEpisodeLength" id="cbEpisodeLength">
+            <label for="cbEpisodeLength">Length per episode</label>git branch 
 
-        <label for="nbrEpisodeLength">Minimum length per episode (min):</label>
-        <input type="number" name="nbrEpisodeLength" id="nbrEpisodeLength">
+        </div>
 
-        <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label>
-        <input type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
-        
-        <label for="ddEpisodeGenre">Genre:</label>
-        <select name="ddEpisodeGenre" id="ddEpisodeGenre">
-            <option value="drama">Drama</option>
-            <option value="comedy">Comedy</option>
-            <option value="science fiction">Science Fiction</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="crime">Crime</option>
-            <option value="mystery">Mystery</option>
-            <option value="horror">Horror</option>
-            <option value="romance">Romance</option>
-            <option value="documentary">Documentary</option>
-            <option value="reality tv">Reality TV</option>
-            <option value="thriller">Thriller</option>
-            <option value="action">Action</option>
-            <option value="adventure">Adventure</option>
-            <option value="historical drama">Historical Drama</option>
-            <option value="animation">Animation</option>
-            <option value="superhero">Superhero</option>
-            <option value="family">Family</option>
-            <option value="musical">Musical</option>
-            <option value="western">Western</option>
-            <option value="game show">Game Show</option>
-        </select>
+        <div class="mb-4">
+            <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
+            <label for="cbEpisodeQuantity">Number of episodes</label>
+        </div>
 
-        <button id="btnBinge">Let's Binge</button>
-    </body>
+        <div class="mb-4">
+            <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
+            <label for="cbEpisodeGenre">Genre</label>
+        </div>
+
+        <div class="mb-4">
+            <label for="nbrEpisodeLength">Minimum length per episode (min):</label>
+            <input type="number" name="nbrEpisodeLength" id="nbrEpisodeLength">
+        </div>
+
+        <div class="mb-4">
+            <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label>
+            <input type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
+        </div>
+
+        <div class="mb-4">
+            <label for="ddEpisodeGenre">Genre:</label>
+            <select name="ddEpisodeGenre" id="ddEpisodeGenre">
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+                <option value="science fiction">Science Fiction</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="crime">Crime</option>
+                <option value="mystery">Mystery</option>
+                <option value="horror">Horror</option>
+                <option value="romance">Romance</option>
+                <option value="documentary">Documentary</option>
+                <option value="reality tv">Reality TV</option>
+                <option value="thriller">Thriller</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="historical drama">Historical Drama</option>
+                <option value="animation">Animation</option>
+                <option value="superhero">Superhero</option>
+                <option value="family">Family</option>
+                <option value="musical">Musical</option>
+                <option value="western">Western</option>
+                <option value="game show">Game Show</option>
+            </select>
+        </div>
+
+        <button id="btnBinge" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Let's Binge
+        </button>
+    </form>
+
+    <div id="results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Results will be populated here -->
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+</body>
 </html>
+
+
+
+
+
