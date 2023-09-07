@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("searchForm");
+  const form = document.getElementById("searchForm");
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -28,15 +28,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
 
         console.log(data); 
-
         let shows = data.results;
   
-        if (episodeLengthChecked) {
-          shows = shows.filter(show => show.episode_run_time[0] >= episodeLength);
-        }
+        // if (episodeLengthChecked) {
+        //   shows = shows.filter(show => show.episode_run_time[0] >= episodeLength);
+        // }
   
+        // if (episodeQuantityChecked) {
+        //   shows = shows.filter(show => show.episode_number >= episodeQuantity);
+        // }
+
         if (episodeQuantityChecked) {
-          shows = shows.filter(show => show.episode_number >= episodeQuantity);
+          // Fetch total number of episodes for each show and filter
+          shows = await Promise.all(shows.map(async show => {
+            const seriesUrl = `https://api.themoviedb.org/3/tv/${show.id}?language=en-US&api_key=${apiKey}`;
+            const seriesResponse = await fetch(seriesUrl);
+            const seriesData = await seriesResponse.json();
+            show.total_episodes = seriesData.number_of_episodes;
+            return show;
+          })).then(shows => shows.filter(show => show.total_episodes >= episodeQuantity));
         }
   
         const resultsDiv = document.getElementById("results");
@@ -61,3 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+
+
+
