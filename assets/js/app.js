@@ -18,15 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   
       const apiKey = "3e1cf70d880acb18f154700af5ac63f8";
-      const url = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${query}`;
-  
+      const url = "https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=true&language=en-US&screened_theatrically=true&sort_by=popularity.desc&with_genres=10759" + query + "&api_key=" + apiKey;
+      
       try {
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-  
+
+        console.log(data); 
+
         let shows = data.results;
   
         if (episodeLengthChecked) {
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
   
         if (episodeQuantityChecked) {
-          shows = shows.filter(show => show.number_of_episodes >= episodeQuantity);
+          shows = shows.filter(show => show.episode_number >= episodeQuantity);
         }
   
         const resultsDiv = document.getElementById("results");
@@ -58,5 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
   
