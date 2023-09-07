@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("searchForm");
+  const form = document.getElementById("searchForm");
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -18,23 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   
       const apiKey = "3e1cf70d880acb18f154700af5ac63f8";
-      const url = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1${query}`;
-  
+      const url = "https://api.themoviedb.org/3/discover/tv?include_adult=true&include_null_first_air_dates=true&language=en-US&screened_theatrically=true&sort_by=popularity.desc&with_genres=10759" + query + "&api_key=" + apiKey;
+      
       try {
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-  
+
+        console.log(data); 
         let shows = data.results;
   
-        if (episodeLengthChecked) {
-          shows = shows.filter(show => show.episode_run_time[0] >= episodeLength);
-        }
+        // if (episodeLengthChecked) {
+        //   shows = shows.filter(show => show.episode_run_time[0] >= episodeLength);
+        // }
   
+        // if (episodeQuantityChecked) {
+        //   shows = shows.filter(show => show.episode_number >= episodeQuantity);
+        // }
+
         if (episodeQuantityChecked) {
-          shows = shows.filter(show => show.number_of_episodes >= episodeQuantity);
+          // Fetch total number of episodes for each show and filter
+          shows = await Promise.all(shows.map(async show => {
+            const seriesUrl = `https://api.themoviedb.org/3/tv/${show.id}?language=en-US&api_key=${apiKey}`;
+            const seriesResponse = await fetch(seriesUrl);
+            const seriesData = await seriesResponse.json();
+            show.total_episodes = seriesData.number_of_episodes;
+            return show;
+          })).then(shows => shows.filter(show => show.total_episodes >= episodeQuantity));
         }
   
         const resultsDiv = document.getElementById("results");
@@ -59,4 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  
+
+
+
