@@ -4,60 +4,66 @@
 <head>
     <title>BigBinge</title>
 
-
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="bg-gray-100 p-8">
+<body class="p-8">
     <h1 class="text-4xl mb-4">Welcome to BigBinge!</h1>
     <p class="mb-4">How would you like to find your next binge session?</p>
 
     <form id="searchForm" class="mb-8">
-        <div class="mb-4">
-            <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
-            <label for="cbEpisodeQuantity">Number of episodes</label>
+        <div>
+            <div class="mb-4 checkbox-field">
+                <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
+                <label for="cbEpisodeQuantity">Number of episodes</label>
+            </div>
+            
+            <div class="mb-4 input-field transition-all duration-500">
+                <!-- <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label> -->
+                <input type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
+            </div>
         </div>
         
-        <div class="mb-4">
-            <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
-            <label for="cbSeriesRating">Series rating</label>
+        <div>
+            <div class="mb-4 checkbox-field">
+                <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
+                <label for="cbSeriesRating">Series rating</label>
+            </div>
+    
+            <div class="mb-4 input-field transition-all duration-500">
+                <!-- <label for="nbrSeriesRating">Minimum rating (1-10):</label> -->
+                <input type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
+            </div>
         </div>
 
-        <div class="mb-4">
-            <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
-            <label for="cbEpisodeGenre">Genre</label>
-        </div>
-        
-        <div class="mb-4 input-field" style="display: none;">
-            <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label>
-            <input type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
-        </div>
-
-        <div class="mb-4 input-field" style="display: none;">
-            <label for="nbrSeriesRating">Minimum rating (1-10):</label>
-            <input type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
-        </div>
-
-        <div class="mb-4 input-field" style="display: none;">
-            <label for="ddEpisodeGenre">Genre:</label>
-            <select name="ddEpisodeGenre" id="ddEpisodeGenre">
-                <option value="10759">Action & Adventure</option>
-                <option value="16">Animation</option>
-                <option value="35">Comedy</option>
-                <option value="80">Crime</option>
-                <option value="99">Documentary</option>
-                <option value="18">Drama</option>
-                <option value="10751">Family</option>
-                <option value="10762">Kids</option>
-                <option value="9648">Mystery</option>
-                <option value="10763">News</option>
-                <option value="10764">Reality</option>
-                <option value="10765">Sci-Fi & Fantasy</option>
-                <option value="10766">Soap</option>
-                <option value="10767">Talk</option>
-                <option value="10768">War & Politics</option>
-                <option value="37">Western</option>
-            </select>
+        <div>
+            <div class="mb-4 checkbox-field">
+                <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
+                <label for="cbEpisodeGenre">Genre</label>
+            </div>
+    
+            <div class="mb-4 input-field transition-all duration-500">
+                <!-- <label for="ddEpisodeGenre">Genre:</label> -->
+                <select name="ddEpisodeGenre" id="ddEpisodeGenre">
+                    <option value="10759">Action & Adventure</option>
+                    <option value="16">Animation</option>
+                    <option value="35">Comedy</option>
+                    <option value="80">Crime</option>
+                    <option value="99">Documentary</option>
+                    <option value="18">Drama</option>
+                    <option value="10751">Family</option>
+                    <option value="10762">Kids</option>
+                    <option value="9648">Mystery</option>
+                    <option value="10763">News</option>
+                    <option value="10764">Reality</option>
+                    <option value="10765">Sci-Fi & Fantasy</option>
+                    <option value="10766">Soap</option>
+                    <option value="10767">Talk</option>
+                    <option value="10768">War & Politics</option>
+                    <option value="37">Western</option>
+                </select>
+            </div>
         </div>
 
         <button id="btnBinge" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="display: none;">

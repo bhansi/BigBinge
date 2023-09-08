@@ -2,38 +2,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("searchForm");
   const inputFields = document.getElementsByClassName("input-field");
 
-  for(let i = 0; i < inputFields.length; i++) {
-    inputFields[i].style.display = "none";
-  }
-
   const cbEisodeQuantity = document.getElementById("cbEpisodeQuantity");
   const cbSeriesRating = document.getElementById("cbSeriesRating");
   const cbEpisodeGenre = document.getElementById("cbEpisodeGenre");
 
   cbEisodeQuantity.addEventListener("click", function() {
     if(cbEisodeQuantity.checked) {
-      inputFields[0].style.display = "inline-block"
+      inputFields[0].style.transform = "translateX(-200px)";
     }
     else {
-      inputFields[0].style.display = "none";
+      inputFields[0].style.transform = "translateX(0px)";
     }
   });
 
   cbSeriesRating.addEventListener("click", function() {
     if(cbSeriesRating.checked) {
-      inputFields[1].style.display = "inline-block"
+      inputFields[1].style.transform = "translateX(-200px)";
     }
     else {
-      inputFields[1].style.display = "none";
+      inputFields[1].style.transform = "translateX(0px)";
     }
   });
 
   cbEpisodeGenre.addEventListener("click", function() {
     if(cbEpisodeGenre.checked) {
-      inputFields[2].style.display = "inline-block"
+      inputFields[2].style.transform = "translateX(-200px)";
     }
     else {
-      inputFields[2].style.display = "none";
+      inputFields[2].style.transform = "translateX(0px)";
     }
   });
   

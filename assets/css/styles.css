@@ -1,0 +1,16 @@
+form, .checkbox-field {
+    background-color: rgb(5 150 105);
+}
+
+.checkbox-field, .input-field {
+    position: relative;
+    display: inline-block;
+}
+
+.checkbox-field {
+    z-index: 2;
+}
+
+.input-field {
+    z-index: 1;
+}
