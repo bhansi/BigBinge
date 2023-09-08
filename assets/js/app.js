@@ -1,35 +1,52 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("searchForm");
+
+  const inputContainers = document.getElementsByClassName("input-container");
+  const cbFields = document.getElementsByClassName("checkbox-field");
   const inputFields = document.getElementsByClassName("input-field");
 
   const cbEisodeQuantity = document.getElementById("cbEpisodeQuantity");
   const cbSeriesRating = document.getElementById("cbSeriesRating");
   const cbEpisodeGenre = document.getElementById("cbEpisodeGenre");
 
+  const btnBinge = document.getElementById("btnBinge");
+
   cbEisodeQuantity.addEventListener("click", function() {
     if(cbEisodeQuantity.checked) {
+      inputContainers[0].style.border = "solid";
       inputFields[0].style.transform = "translateX(0px)";
+      cbFields[0].classList.add("rounded-l-lg");
     }
     else {
+      inputContainers[0].style.border = "solid rgb(5 150 105)";
       inputFields[0].style.transform = "translateX(-100%)";
+      cbFields[0].classList.remove("rounded-l-lg");
     }
   });
-
+  
   cbSeriesRating.addEventListener("click", function() {
     if(cbSeriesRating.checked) {
+      inputContainers[1].style.border = "solid";
       inputFields[1].style.transform = "translateX(0px)";
+      cbFields[1].classList.add("rounded-l-lg");
     }
     else {
+      inputContainers[1].style.border = "solid rgb(5 150 105)";
       inputFields[1].style.transform = "translateX(-100%)";
+      cbFields[1].classList.remove("rounded-l-lg");
     }
   });
-
+  
   cbEpisodeGenre.addEventListener("click", function() {
     if(cbEpisodeGenre.checked) {
+      inputContainers[2].style.border = "solid";
       inputFields[2].style.transform = "translateX(0px)";
+      cbFields[2].classList.add("rounded-l-lg");
     }
     else {
+      inputContainers[2].style.border = "solid rgb(5 150 105)";
       inputFields[2].style.transform = "translateX(-100%)";
+      cbFields[2].classList.remove("rounded-l-lg");
     }
   });
   

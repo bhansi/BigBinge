@@ -12,40 +12,40 @@
     <h1 class="text-4xl mb-4">Welcome to BigBinge!</h1>
     <p class="mb-4">How would you like to find your next binge session?</p>
 
-    <form id="searchForm" class="mb-8 w-1/2">
-        <div class="flex flex-row w-auto">
-            <div class="mb-4 p-3 basis-1/2 w-1/3 checkbox-field">
+    <form id="searchForm" class="mb-8 w-1/3">
+        <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
+            <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
                 <label for="cbEpisodeQuantity" class="float-right">Number of episodes</label>
             </div>
             
-            <div class="mb-4 basis-1/2 w-1/3 self-center transition-all duration-500 input-field">
+            <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
                 <!-- <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label> -->
-                <input class="w-full" type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
+                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
             </div>
         </div>
         
-        <div class="flex flex-row">
-            <div class="mb-4 p-3 basis-1/2 w-1/3 checkbox-field">
+        <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
+            <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
                 <label for="cbSeriesRating" class="float-right">Series rating</label>
             </div>
     
-            <div class="mb-4 basis-1/2 w-1/3 self-center transition-all duration-500 input-field">
+            <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
                 <!-- <label for="nbrSeriesRating">Minimum rating (1-10):</label> -->
-                <input class="w-full" type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
+                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
             </div>
         </div>
 
-        <div class="flex flex-row">
-            <div class="mb-4 p-3 basis-1/2 w-1/3 checkbox-field">
+        <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
+            <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
                 <label for="cbEpisodeGenre" class="float-right">Genre</label>
             </div>
     
-            <div class="mb-4 basis-1/2 w-1/3 self-center transition-all duration-500 input-field">
+            <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
                 <!-- <label for="ddEpisodeGenre">Genre:</label> -->
-                <select class="w-full" name="ddEpisodeGenre" id="ddEpisodeGenre">
+                <select class="w-full p-3 rounded-r-lg" name="ddEpisodeGenre" id="ddEpisodeGenre">
                     <option value="10759">Action & Adventure</option>
                     <option value="16">Animation</option>
                     <option value="35">Comedy</option>
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <button id="btnBinge" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="display: none;">
+        <button id="btnBinge" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Let's Binge
         </button>
     </form>
