@@ -8,28 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cbEisodeQuantity.addEventListener("click", function() {
     if(cbEisodeQuantity.checked) {
-      inputFields[0].style.transform = "translateX(-200px)";
+      inputFields[0].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[0].style.transform = "translateX(0px)";
+      inputFields[0].style.transform = "translateX(-200px)";
     }
   });
 
   cbSeriesRating.addEventListener("click", function() {
     if(cbSeriesRating.checked) {
-      inputFields[1].style.transform = "translateX(-200px)";
+      inputFields[1].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[1].style.transform = "translateX(0px)";
+      inputFields[1].style.transform = "translateX(-200px)";
     }
   });
 
   cbEpisodeGenre.addEventListener("click", function() {
     if(cbEpisodeGenre.checked) {
-      inputFields[2].style.transform = "translateX(-200px)";
+      inputFields[2].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[2].style.transform = "translateX(0px)";
+      inputFields[2].style.transform = "translateX(-200px)";
     }
   });
   

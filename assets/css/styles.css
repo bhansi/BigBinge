@@ -1,4 +1,4 @@
-form, .checkbox-field {
+body, form, .checkbox-field {
     background-color: rgb(5 150 105);
 }
 
@@ -7,10 +7,11 @@ form, .checkbox-field {
     display: inline-block;
 }
 
-.checkbox-field {
+body, form, .checkbox-field {
     z-index: 2;
 }
 
 .input-field {
     z-index: 1;
+    transform: translateX(-200px);
 }
