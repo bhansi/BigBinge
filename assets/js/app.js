@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputFields[0].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[0].style.transform = "translateX(-200px)";
+      inputFields[0].style.transform = "translateX(-100%)";
     }
   });
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputFields[1].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[1].style.transform = "translateX(-200px)";
+      inputFields[1].style.transform = "translateX(-100%)";
     }
   });
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputFields[2].style.transform = "translateX(0px)";
     }
     else {
-      inputFields[2].style.transform = "translateX(-200px)";
+      inputFields[2].style.transform = "translateX(-100%)";
     }
   });
   
