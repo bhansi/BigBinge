@@ -14,29 +14,28 @@
 
     <form id="searchForm" class="mb-8">
         <div class="mb-4">
-            <input type="checkbox" name="cbEpisodeLength" id="cbEpisodeLength">
-            <label for="cbEpisodeLength">Length per episode</label>
-
-        </div>
-
-        <div class="mb-4">
             <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
             <label for="cbEpisodeQuantity">Number of episodes</label>
+        </div>
+        
+        <div class="mb-4">
+            <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
+            <label for="cbSeriesRating">Series rating</label>
         </div>
 
         <div class="mb-4">
             <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
             <label for="cbEpisodeGenre">Genre</label>
         </div>
-
-        <div class="mb-4">
-            <label for="nbrEpisodeLength">Minimum length per episode (min):</label>
-            <input type="number" name="nbrEpisodeLength" id="nbrEpisodeLength">
-        </div>
-
+        
         <div class="mb-4">
             <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label>
             <input type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
+        </div>
+
+        <div class="mb-4">
+            <label for="nbrSeriesRating">Minimum rating (1-10):</label>
+            <input type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
         </div>
 
         <div class="mb-4">
