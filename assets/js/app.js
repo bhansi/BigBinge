@@ -11,79 +11,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnBinge = document.getElementById("btnBinge");
 
-  let optionChecked = false;
+  let btnBingeDisplayed = false;
 
   function isOptionChecked() {
     return cbEisodeQuantity.checked || cbSeriesRating.checked || cbEpisodeGenre.checked;
   }
 
-  cbEisodeQuantity.addEventListener("click", function() {
-    if(cbEisodeQuantity.checked) {
-      inputContainers[0].style.border = "solid";
-      inputFields[0].style.transform = "translateX(0%)";
-      cbFields[0].classList.add("rounded-l-lg");
-
-      if(!optionChecked) {
+  function checkboxHandler(index, checked) {
+    if(checked) {
+      inputContainers[index].style.border = "solid";
+      inputFields[index].style.transform = "translateX(0%)";
+      cbFields[index].classList.add("rounded-l-lg");
+      
+      if(!btnBingeDisplayed) {
         btnBinge.style.transform = "translateY(0%)";
-        optionChecked = true;
+        btnBingeDisplayed = true;
       }
     }
+
     else {
-      inputContainers[0].style.border = "solid rgb(5 150 105)";
-      inputFields[0].style.transform = "translateX(-100%)";
-      cbFields[0].classList.remove("rounded-l-lg");
+      inputContainers[index].style.border = "solid rgb(5 150 105)";
+      inputFields[index].style.transform = "translateX(-100%)";
+      cbFields[index].classList.remove("rounded-l-lg");
       
       if(!isOptionChecked()) {
         btnBinge.style.transform = "translateY(-150%)";
-        optionChecked = false;
+        btnBingeDisplayed = false;
       }
     }
+  }
+
+  cbEisodeQuantity.addEventListener("click", function() {
+    checkboxHandler(0, cbEisodeQuantity.checked);
   });
   
   cbSeriesRating.addEventListener("click", function() {
-    if(cbSeriesRating.checked) {
-      inputContainers[1].style.border = "solid";
-      inputFields[1].style.transform = "translateX(0%)";
-      cbFields[1].classList.add("rounded-l-lg");
-      
-      if(!optionChecked) {
-        btnBinge.style.transform = "translateY(0%)";
-        optionChecked = true;
-      }
-    }
-    else {
-      inputContainers[1].style.border = "solid rgb(5 150 105)";
-      inputFields[1].style.transform = "translateX(-100%)";
-      cbFields[1].classList.remove("rounded-l-lg");
-      
-      if(!isOptionChecked()) {
-        btnBinge.style.transform = "translateY(-150%)";
-        optionChecked = false;
-      }
-    }
+    checkboxHandler(1, cbSeriesRating.checked);
   });
-    
-  cbEpisodeGenre.addEventListener("click", function() {
-    if(cbEpisodeGenre.checked) {
-      inputContainers[2].style.border = "solid";
-      inputFields[2].style.transform = "translateX(0%)";
-      cbFields[2].classList.add("rounded-l-lg");
-      
-      if(!optionChecked) {
-        btnBinge.style.transform = "translateY(0%)";
-        optionChecked = true;
-      }
-    }
-    else {
-      inputContainers[2].style.border = "solid rgb(5 150 105)";
-      inputFields[2].style.transform = "translateX(-100%)";
-      cbFields[2].classList.remove("rounded-l-lg");
   
-      if(!isOptionChecked()) {
-        btnBinge.style.transform = "translateY(-150%)";
-        optionChecked = false;
-      }
-    }
+  cbEpisodeGenre.addEventListener("click", function() {
+    checkboxHandler(2, cbEpisodeGenre.checked);
   });
   
   form.addEventListener("submit", async (e) => {
@@ -102,10 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let doneDisplaying = false;
     
     let query = "";
-    if (episodeGenreChecked) {
+    if (cbEpisodeGenre.checked) {
       query += `&with_genres=${episodeGenre}`;
     }
-    if (seriesRatingChecked) {
+    if (cbSeriesRating.checked) {
       query += `&vote_average.gte=${seriesRating}`;
     }
 
@@ -134,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if(shows.length < 1) { break; } // Stop calling API if there are no more shows
 
-          if (episodeQuantityChecked) {
+          if (cbEisodeQuantity.checked) {
             shows = shows.filter(show => show.total_episodes >= episodeQuantity);
           }
 
