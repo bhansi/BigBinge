@@ -1,5 +1,11 @@
+:root {
+    --logo-green: #00f59a;
+    --logo-blue: #00aaf4;
+    --logo-gray: #6c748c;
+}
+
 body {
-    background-color: rgb(5 150 105);
+    background-color: var(--logo-gray);
 }
 
 #btnBinge {
@@ -13,12 +19,12 @@ body {
 .input-container {
     position: relative;
     z-index: 4;
-    background-color: rgb(5 150 105);
-    border: solid rgb(5 150 105);
+    background-color: var(--logo-gray);
+    border: solid var(--logo-gray);
 }
 
 .checkbox-field {
-    background-color: rgb(5 150 105);
+    background-color: var(--logo-blue);
 }
 
 .checkbox-field, .input-field {

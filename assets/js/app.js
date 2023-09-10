@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkboxHandler(index, checked) {
     if(checked) {
-      inputContainers[index].style.border = "solid";
       inputFields[index].style.transform = "translateX(0%)";
+      inputContainers[index].style.border = "solid";
       cbFields[index].classList.add("rounded-l-lg");
       
       if(!btnBingeDisplayed) {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     else {
-      inputContainers[index].style.border = "solid rgb(5 150 105)";
+      inputContainers[index].style.border = "solid #6c748c";
       inputFields[index].style.transform = "translateX(-100%)";
       cbFields[index].classList.remove("rounded-l-lg");
       
