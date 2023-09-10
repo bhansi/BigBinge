@@ -16,31 +16,31 @@
         <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
             <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
-                <label for="cbEpisodeQuantity" class="float-right">Number of episodes</label>
+                <label for="cbEpisodeQuantity">Number of episodes</label>
             </div>
             
             <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
                 <!-- <label for="nbrEpisodeQuantity">Minimum number of episodes (total):</label> -->
-                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity">
+                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrEpisodeQuantity" id="nbrEpisodeQuantity" placeholder="Minimum number">
             </div>
         </div>
         
         <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
             <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
-                <label for="cbSeriesRating" class="float-right">Series rating</label>
+                <label for="cbSeriesRating">Series rating</label>
             </div>
     
             <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
                 <!-- <label for="nbrSeriesRating">Minimum rating (1-10):</label> -->
-                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10">
+                <input class="w-full p-3 rounded-r-lg" type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10" placeholder="1-10">
             </div>
         </div>
 
         <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
             <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
                 <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
-                <label for="cbEpisodeGenre" class="float-right">Genre</label>
+                <label for="cbEpisodeGenre">Genre</label>
             </div>
     
             <div class="basis-1/2 w-1/2 self-center transition-all duration-500 input-field">
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <button id="btnBinge" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button id="btnBinge" class="w-11/12 justify-self-center transition-all duration-1000 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Let's Binge
         </button>
     </form>

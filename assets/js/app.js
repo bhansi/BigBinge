@@ -11,42 +11,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const btnBinge = document.getElementById("btnBinge");
 
+  let optionChecked = false;
+
+  function isOptionChecked() {
+    return cbEisodeQuantity.checked || cbSeriesRating.checked || cbEpisodeGenre.checked;
+  }
+
   cbEisodeQuantity.addEventListener("click", function() {
     if(cbEisodeQuantity.checked) {
       inputContainers[0].style.border = "solid";
-      inputFields[0].style.transform = "translateX(0px)";
+      inputFields[0].style.transform = "translateX(0%)";
       cbFields[0].classList.add("rounded-l-lg");
+
+      if(!optionChecked) {
+        btnBinge.style.transform = "translateY(0%)";
+        optionChecked = true;
+      }
     }
     else {
       inputContainers[0].style.border = "solid rgb(5 150 105)";
       inputFields[0].style.transform = "translateX(-100%)";
       cbFields[0].classList.remove("rounded-l-lg");
+      
+      if(!isOptionChecked()) {
+        btnBinge.style.transform = "translateY(-150%)";
+        optionChecked = false;
+      }
     }
   });
   
   cbSeriesRating.addEventListener("click", function() {
     if(cbSeriesRating.checked) {
       inputContainers[1].style.border = "solid";
-      inputFields[1].style.transform = "translateX(0px)";
+      inputFields[1].style.transform = "translateX(0%)";
       cbFields[1].classList.add("rounded-l-lg");
+      
+      if(!optionChecked) {
+        btnBinge.style.transform = "translateY(0%)";
+        optionChecked = true;
+      }
     }
     else {
       inputContainers[1].style.border = "solid rgb(5 150 105)";
       inputFields[1].style.transform = "translateX(-100%)";
       cbFields[1].classList.remove("rounded-l-lg");
+      
+      if(!isOptionChecked()) {
+        btnBinge.style.transform = "translateY(-150%)";
+        optionChecked = false;
+      }
     }
   });
-  
+    
   cbEpisodeGenre.addEventListener("click", function() {
     if(cbEpisodeGenre.checked) {
       inputContainers[2].style.border = "solid";
-      inputFields[2].style.transform = "translateX(0px)";
+      inputFields[2].style.transform = "translateX(0%)";
       cbFields[2].classList.add("rounded-l-lg");
+      
+      if(!optionChecked) {
+        btnBinge.style.transform = "translateY(0%)";
+        optionChecked = true;
+      }
     }
     else {
       inputContainers[2].style.border = "solid rgb(5 150 105)";
       inputFields[2].style.transform = "translateX(-100%)";
       cbFields[2].classList.remove("rounded-l-lg");
+  
+      if(!isOptionChecked()) {
+        btnBinge.style.transform = "translateY(-150%)";
+        optionChecked = false;
+      }
     }
   });
   
