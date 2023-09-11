@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     else {
-      inputContainers[index].style.border = "solid #6c748c";
       inputFields[index].style.transform = "translateX(-100%)";
+      inputContainers[index].style.border = "solid var(--logo-blue)";
       cbFields[index].classList.remove("rounded-l-lg");
       
       if(!isOptionChecked()) {

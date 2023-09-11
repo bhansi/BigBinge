@@ -8,23 +8,20 @@ body {
     background-color: var(--logo-gray);
 }
 
-#btnBinge {
-    display: block;
-    position: relative;
-    transform: translateY(-150%);
-    z-index: 1;
-    margin: 0 auto;
+form {
+    background-color: var(--logo-blue);
 }
 
 .input-container {
     position: relative;
     z-index: 4;
-    background-color: var(--logo-gray);
-    border: solid var(--logo-gray);
+    background-color: var(--logo-blue);
+    border: solid var(--logo-blue);
 }
 
 .checkbox-field {
     background-color: var(--logo-blue);
+    z-index: 3;
 }
 
 .checkbox-field, .input-field {
@@ -32,11 +29,23 @@ body {
     display: inline-block;
 }
 
-.checkbox-field {
-    z-index: 3;
-}
-
 .input-field {
     z-index: 2;
     transform: translateX(-100%);
+}
+
+.input-field * {
+    border: solid var(--logo-blue);
+}
+
+input[type=checkbox] {
+    
+}
+
+#btnBinge {
+    display: block;
+    position: relative;
+    transform: translateY(-150%);
+    z-index: 1;
+    margin: 0 auto;
 }
