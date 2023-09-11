@@ -1,12 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("searchForm");
+
+  const inputContainers = document.getElementsByClassName("input-container");
+  const cbFields = document.getElementsByClassName("checkbox-field");
+  const inputFields = document.getElementsByClassName("input-field");
+
+  const cbEisodeQuantity = document.getElementById("cbEpisodeQuantity");
+  const cbSeriesRating = document.getElementById("cbSeriesRating");
+  const cbEpisodeGenre = document.getElementById("cbEpisodeGenre");
+
+  const btnBinge = document.getElementById("btnBinge");
+
+  let btnBingeDisplayed = false;
+
+  function isOptionChecked() {
+    return cbEisodeQuantity.checked || cbSeriesRating.checked || cbEpisodeGenre.checked;
+  }
+
+  function checkboxHandler(index, checked) {
+    if(checked) {
+      inputFields[index].style.transform = "translateX(0%)";
+      inputContainers[index].style.border = "solid";
+      cbFields[index].classList.add("rounded-l-lg");
+      
+      if(!btnBingeDisplayed) {
+        btnBinge.style.transform = "translateY(0%)";
+        btnBingeDisplayed = true;
+      }
+    }
+
+    else {
+      inputContainers[index].style.border = "solid #6c748c";
+      inputFields[index].style.transform = "translateX(-100%)";
+      cbFields[index].classList.remove("rounded-l-lg");
+      
+      if(!isOptionChecked()) {
+        btnBinge.style.transform = "translateY(-150%)";
+        btnBingeDisplayed = false;
+      }
+    }
+  }
+
+  cbEisodeQuantity.addEventListener("click", function() {
+    checkboxHandler(0, cbEisodeQuantity.checked);
+  });
+  
+  cbSeriesRating.addEventListener("click", function() {
+    checkboxHandler(1, cbSeriesRating.checked);
+  });
+  
+  cbEpisodeGenre.addEventListener("click", function() {
+    checkboxHandler(2, cbEpisodeGenre.checked);
+  });
   
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
-    const episodeQuantityChecked = document.getElementById("cbEpisodeQuantity").checked;
-    const seriesRatingChecked = document.getElementById("cbSeriesRating").checked;
-    const episodeGenreChecked = document.getElementById("cbEpisodeGenre").checked;
 
     const episodeQuantity = document.getElementById("nbrEpisodeQuantity").value;
     const seriesRating = document.getElementById("nbrSeriesRating").value;
@@ -21,10 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let doneDisplaying = false;
     
     let query = "";
-    if (episodeGenreChecked) {
+    if (cbEpisodeGenre.checked) {
       query += `&with_genres=${episodeGenre}`;
     }
-    if (seriesRatingChecked) {
+    if (cbSeriesRating.checked) {
       query += `&vote_average.gte=${seriesRating}`;
     }
 
@@ -53,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if(shows.length < 1) { break; } // Stop calling API if there are no more shows
 
-          if (episodeQuantityChecked) {
+          if (cbEisodeQuantity.checked) {
             shows = shows.filter(show => show.total_episodes >= episodeQuantity);
           }
 

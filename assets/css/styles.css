@@ -1,1 +1,42 @@
-add code 
+:root {
+    --logo-green: #00f59a;
+    --logo-blue: #00aaf4;
+    --logo-gray: #6c748c;
+}
+
+body {
+    background-color: var(--logo-gray);
+}
+
+#btnBinge {
+    display: block;
+    position: relative;
+    transform: translateY(-150%);
+    z-index: 1;
+    margin: 0 auto;
+}
+
+.input-container {
+    position: relative;
+    z-index: 4;
+    background-color: var(--logo-gray);
+    border: solid var(--logo-gray);
+}
+
+.checkbox-field {
+    background-color: var(--logo-blue);
+}
+
+.checkbox-field, .input-field {
+    position: relative;
+    display: inline-block;
+}
+
+.checkbox-field {
+    z-index: 3;
+}
+
+.input-field {
+    z-index: 2;
+    transform: translateX(-100%);
+}
