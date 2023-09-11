@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const inputContainers = document.getElementsByClassName("input-container");
   const cbFields = document.getElementsByClassName("checkbox-field");
+  const cbLabels = document.getElementsByTagName("label");
+  console.log(cbLabels);
   const inputFields = document.getElementsByClassName("input-field");
 
   const cbEisodeQuantity = document.getElementById("cbEpisodeQuantity");
@@ -20,7 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkboxHandler(index, checked) {
     if(checked) {
       inputFields[index].style.transform = "translateX(0%)";
-      inputContainers[index].style.border = "solid";
+      switch(index) {
+        case 0: 
+          cbLabels[index].style.transform = "translateX(38%)";
+          break;
+        case 1:
+          cbLabels[index].style.transform = "translateX(125%)";
+          break;
+        case 2:
+          cbLabels[index].style.transform = "translateX(363%)";
+      }
+      inputContainers[index].style.border = "solid var(--logo-gray)";
       cbFields[index].classList.add("rounded-l-lg");
       
       if(!btnBingeDisplayed) {
@@ -28,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBingeDisplayed = true;
       }
     }
-
+    
     else {
       inputFields[index].style.transform = "translateX(-100%)";
+      cbLabels[index].style.transform = "translateX(0%)";
       inputContainers[index].style.border = "solid var(--logo-blue)";
       cbFields[index].classList.remove("rounded-l-lg");
       

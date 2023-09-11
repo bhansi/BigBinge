@@ -19,7 +19,7 @@
             <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
                 <div class="p-3 w-1/2 checkbox-field">
                     <input type="checkbox" name="cbEpisodeQuantity" id="cbEpisodeQuantity">
-                    <label for="cbEpisodeQuantity">Number of episodes</label>
+                    <label for="cbEpisodeQuantity" class="transition-all duration-700">Number of episodes</label>
                 </div>
                 
                 <div class="w-1/2 transition-all duration-700 input-field">
@@ -28,23 +28,23 @@
             </div>
             
             <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
-                <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
+                <div class="p-3 w-1/2 transition-all checkbox-field">
                     <input type="checkbox" name="cbSeriesRating" id="cbSeriesRating">
-                    <label for="cbSeriesRating">Series rating</label>
+                    <label for="cbSeriesRating" class="transition-all duration-700">Series rating</label>
                 </div>
         
-                <div class="basis-1/2 w-1/2 self-center transition-all duration-700 input-field">
+                <div class="w-1/2 self-center transition-all duration-700 input-field">
                     <input class="w-full p-3 rounded-r-lg" type="number" name="nbrSeriesRating" id="nbrSeriesRating" min="1" max="10" placeholder="1-10">
                 </div>
             </div>
     
             <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
-                <div class="p-3 basis-1/2 w-1/2 transition-all checkbox-field">
+                <div class="p-3 w-1/2 transition-all checkbox-field">
                     <input type="checkbox" name="cbEpisodeGenre" id="cbEpisodeGenre">
-                    <label for="cbEpisodeGenre">Genre</label>
+                    <label for="cbEpisodeGenre" class="transition-all duration-700">Genre</label>
                 </div>
         
-                <div class="basis-1/2 w-1/2 self-center transition-all duration-700 input-field">
+                <div class="w-1/2 self-center transition-all duration-700 input-field">
                     <select class="w-full p-3 rounded-r-lg" name="ddEpisodeGenre" id="ddEpisodeGenre">
                         <option value="10759">Action & Adventure</option>
                         <option value="16">Animation</option>
@@ -66,7 +66,7 @@
                 </div>
             </div>
     
-            <button id="btnBinge" class="w-11/12 rounded-full transition-all duration-1000 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="btnBinge" class="w-11/12 rounded-full transition-all duration-700 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Let's Binge
             </button>
         </form>

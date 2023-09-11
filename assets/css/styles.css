@@ -1,15 +1,21 @@
 :root {
     --logo-green: #00f59a;
     --logo-blue: #00aaf4;
-    --logo-gray: #6c748c;
+    --logo-gray: #495470;
+    --logo-white: #ffffff;
 }
 
 body {
     background-color: var(--logo-gray);
 }
 
+header * {
+    color: var(--logo-white);
+}
+
 form {
     background-color: var(--logo-blue);
+    color: var(--logo-white);
 }
 
 .input-container {
@@ -24,7 +30,7 @@ form {
     z-index: 3;
 }
 
-.checkbox-field, .input-field {
+.checkbox-field, .input-field, label {
     position: relative;
     display: inline-block;
 }
@@ -32,14 +38,12 @@ form {
 .input-field {
     z-index: 2;
     transform: translateX(-100%);
+    color: black;
 }
 
 .input-field * {
     border: solid var(--logo-blue);
-}
-
-input[type=checkbox] {
-    
+    border-left: 0;
 }
 
 #btnBinge {
@@ -48,4 +52,8 @@ input[type=checkbox] {
     transform: translateY(-150%);
     z-index: 1;
     margin: 0 auto;
+}
+
+#btnBinge:hover {
+    background-color: var(--logo-green);
 }
