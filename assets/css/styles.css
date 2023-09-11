@@ -30,7 +30,7 @@ form {
     z-index: 3;
 }
 
-.checkbox-field, .input-field, label {
+.checkbox-field, .input-field {
     position: relative;
     display: inline-block;
 }
@@ -43,7 +43,6 @@ form {
 
 .input-field * {
     border: solid var(--logo-blue);
-    border-left: 0;
 }
 
 #btnBinge {
