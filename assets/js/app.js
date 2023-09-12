@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkboxHandler(index, checked) {
     if(checked) {
       inputFields[index].style.transform = "translateX(0%)";
-      inputContainers[index].style.border = "solid";
+      inputContainers[index].style.border = "solid var(--logo-gray)";
       cbFields[index].classList.add("rounded-l-lg");
       
       if(!btnBingeDisplayed) {
@@ -28,12 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBingeDisplayed = true;
       }
     }
-
+    
     else {
-      inputContainers[index].style.border = "solid #6c748c";
       inputFields[index].style.transform = "translateX(-100%)";
+      inputContainers[index].style.border = "solid var(--logo-blue)";
       cbFields[index].classList.remove("rounded-l-lg");
-      
+
       if(!isOptionChecked()) {
         btnBinge.style.transform = "translateY(-150%)";
         btnBingeDisplayed = false;

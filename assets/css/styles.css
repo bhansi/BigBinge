@@ -1,11 +1,89 @@
+@font-face {
+    font-family: "gv-time";
+    src: url(./../fonts/GvTimeRegular-4B1zD.ttf);
+}
+
+@font-face {
+    font-family: "gorilla-beer-base";
+    src: url(./../fonts/FontBundles-Gorilla-Beer/Gorillabeer-Gorillabeerbase.ttf);
+}
+
+@font-face {
+    font-family: "gorilla-beer-style";
+    src: url(./../fonts/FontBundles-Gorilla-Beer/Gorillabeer-Gorillabeerstyle.ttf);
+}
+
+@font-face {
+    font-family: "lemon-drop";
+    src: url(./../fonts/Lemondrop-2jrw.ttf);
+}
+
 :root {
     --logo-green: #00f59a;
     --logo-blue: #00aaf4;
-    --logo-gray: #6c748c;
+    --logo-gray: #495470;
+    --logo-white: #ffffff;
 }
 
 body {
     background-color: var(--logo-gray);
+}
+
+header {
+    background-color: var(--logo-gray);
+}
+
+header img {
+    max-width: 50px;
+}
+
+h1 span {
+    font-family: "lemon-drop";
+}
+
+#span-big {
+    color: var(--logo-green);
+}
+
+#span-binge {
+    color: var(--logo-blue);
+}
+
+.welcome * {
+    text-align: center;
+    color: var(--logo-white);
+}
+
+form {
+    background-color: var(--logo-blue);
+    color: var(--logo-white);
+}
+
+.input-container {
+    position: relative;
+    z-index: 4;
+    background-color: var(--logo-blue);
+    border: solid var(--logo-blue);
+}
+
+.checkbox-field {
+    background-color: var(--logo-blue);
+    z-index: 3;
+}
+
+.checkbox-field, .input-field {
+    position: relative;
+    display: inline-block;
+}
+
+.input-field {
+    z-index: 2;
+    transform: translateX(-100%);
+    color: black;
+}
+
+.input-field * {
+    border: solid var(--logo-blue);
 }
 
 #btnBinge {
@@ -16,27 +94,6 @@ body {
     margin: 0 auto;
 }
 
-.input-container {
-    position: relative;
-    z-index: 4;
-    background-color: var(--logo-gray);
-    border: solid var(--logo-gray);
-}
-
-.checkbox-field {
-    background-color: var(--logo-blue);
-}
-
-.checkbox-field, .input-field {
-    position: relative;
-    display: inline-block;
-}
-
-.checkbox-field {
-    z-index: 3;
-}
-
-.input-field {
-    z-index: 2;
-    transform: translateX(-100%);
+#btnBinge:hover {
+    background-color: var(--logo-green);
 }
