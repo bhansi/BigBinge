@@ -1,5 +1,53 @@
-# Group-Project-1
+# BigBinge 🍿
 
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming. This dual paradigm approach offers a high degree of flexibility, allowing me to choose the best programming style for the task at hand. Functional programming is excellent for tasks that require pure functions, immutability, and first-class functions, making code easier to test and debug. On the other hand, Object-oriented programming is great for organizing code into reusable and maintainable classes and objects, which is particularly useful for larger, more complex projects.
+![BigBinge Logo](icon.png)
 
-The language's asynchronous capabilities, like Promises and async/await, make handling real-world scenarios like API calls or file operations incredibly efficient. Additionally, the vast ecosystem of libraries and frameworks, such as React and Node.js, provides endless opportunities for both client-side and server-side development. Overall, JavaScript's versatility makes it a one-stop-shop for full-stack development, perfectly aligning with my career goals to become a full-stack generalist in tech.
+## Overview
+
+BigBinge is an interactive web application that helps you discover and explore TV shows based on your preferences. It offers a user-friendly interface, real-time search results, and the ability to save your favorite shows for future reference.
+
+## Features
+
+- 🎮 Customizable search options, including episode quantity, series rating, and genre.
+- 📺 Real-time TV show search results with images and summaries.
+- 💾 Save your favorite shows to local storage for easy access.
+- 🌐 Responsive design for a seamless experience on various devices.
+
+## Try It Out
+
+Visit [BigBinge](https://your-github-username.github.io/BigBinge/) and start discovering your next binge-worthy TV show!
+
+## Technologies Used
+
+- 🌐 HTML, CSS (with Tailwind CSS), and JavaScript.
+- 🎥 [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) for TV show data.
+🎥 [The YouTube API V3]
+- 🖼️ Icons from [FontAwesome](https://fontawesome.com/).
+
+## Installation
+
+1. Clone the GitHub repository to your local machine.
+2. Open the `index.html` file in a web browser.
+
+## Usage
+
+1. Customize your TV show search preferences by selecting options for episode quantity, series rating, and genre.
+2. Click the "Let's Binge" button to initiate the search.
+3. Browse through TV show search results, including images and summaries.
+4. Click on a TV show card to save it to your local storage for future reference.
+
+## Deployed on GitHub Pages
+
+BigBinge is deployed and accessible on [GitHub Pages](https://your-github-username.github.io/BigBinge/).
+
+## Contribution
+
+Contributions to BigBinge are welcome. Fork the repository, make your changes, and submit a pull request to improve the project.
+
+## License
+
+BigBinge is open-source and available under the [MIT License](LICENSE).
+
+---
+
+Feel free to explore BigBinge, customize your TV show search, and contribute to its development. If you encounter any issues or have suggestions for improvement, please let us know!
