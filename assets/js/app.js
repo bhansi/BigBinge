@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkboxHandler(index, checked) {
     if (checked) {
       inputFields[index].style.transform = "translateX(0%)";
-      inputContainers[index].style.border = "solid var(--logo-gray)";
+      inputContainers[index].style.border = "solid";
       cbFields[index].classList.add("rounded-l-lg");
 
       if (!btnBingeDisplayed) {
@@ -109,12 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
           })
         );
 
-        if (cbEpisodeQuantity.checked) {
-          shows = shows.filter((show) => show.total_episodes >= episodeQuantity);
-        }
-
         if (shows.length < 1) {
           break; // Stop calling API if there are no more shows with trailers
+        }
+
+        if (cbEpisodeQuantity.checked) {
+          shows = shows.filter((show) => show.total_episodes >= episodeQuantity);
         }
 
         shows.forEach((show) => {
