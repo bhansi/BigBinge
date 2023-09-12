@@ -1,6 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("searchForm");
+
   const inputContainers = document.getElementsByClassName("input-container");
   const cbFields = document.getElementsByClassName("checkbox-field");
   const inputFields = document.getElementsByClassName("input-field");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let btnBingeDisplayed = false;
 
-  const youtubeApiKey = "AIzaSyCtE0e2mwbfQjvxvdXRpUrtyKQzlOcaLfQ"; // Replace with your YouTube API key
+  const youtubeApiKey = "AIzaSyC7hGGHVqu26pI7_Sc9Wn2lptlZrr2jYJw"; // Replace with your YouTube API key
 
   function isOptionChecked() {
     return cbEpisodeQuantity.checked || cbSeriesRating.checked || cbEpisodeGenre.checked;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkboxHandler(index, checked) {
     if (checked) {
       inputFields[index].style.transform = "translateX(0%)";
-      inputContainers[index].style.border = "solid";
+      inputContainers[index].style.border = "solid var(--logo-gray)";
       cbFields[index].classList.add("rounded-l-lg");
 
       if (!btnBingeDisplayed) {
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btnBingeDisplayed = true;
       }
     } else {
-      inputContainers[index].style.border = "solid #6c748c";
       inputFields[index].style.transform = "translateX(-100%)";
+      inputContainers[index].style.border = "solid var(--logo-blue)";
       cbFields[index].classList.remove("rounded-l-lg");
 
       if (!isOptionChecked()) {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const episodeGenre = document.getElementById("ddEpisodeGenre").value;
     const resultsDiv = document.getElementById("results");
 
-    // Clear past search results for current search results
+    // Clear past search results for the current search
     resultsDiv.innerHTML = "";
 
     let page = 0;
@@ -109,8 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
           })
         );
 
-        // Filter shows with no YouTube trailer or undefined videoId
-        shows = shows.filter((show) => show.youtubeAvailable && show.youtubeVideoId);
+        if (cbEpisodeQuantity.checked) {
+          shows = shows.filter((show) => show.total_episodes >= episodeQuantity);
+        }
 
         if (shows.length < 1) {
           break; // Stop calling API if there are no more shows with trailers
@@ -135,15 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
               window.open(`https://www.youtube.com/watch?v=${show.youtubeVideoId}`);
             });
             resultsDiv.appendChild(card);
-          }
 
-          numberOfDisplayedSeries++;
-          if (numberOfDisplayedSeries === 18) {
-            doneDisplaying = true;
+            numberOfDisplayedSeries++;
+            if (numberOfDisplayedSeries === 18) {
+              doneDisplaying = true;
+            }
           }
         });
       }
-      
     } catch (error) {
       console.error("Fetch Error:", error);
     }
