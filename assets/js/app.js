@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputFields[index].style.transform = "translateX(-100%)";
       inputContainers[index].style.border = "solid var(--logo-blue)";
       cbFields[index].classList.remove("rounded-l-lg");
-      
+
       if(!isOptionChecked()) {
         btnBinge.style.transform = "translateY(-150%)";
         btnBingeDisplayed = false;

@@ -3,17 +3,21 @@
 <html>
 <head>
     <title>BigBinge</title>
+    <link rel="icon" href="./assets/images/logo-small-transparent.png">
 
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="p-8">
+<body>
+    <header class="p-4 mb-4">
+        <img src="./assets/images/logo-small-transparent.png" alt="BigBinge Logo">
+    </header>
     <div class="grid grid-cols-1 justify-items-center">
-        <header>
-            <h1 class="text-4xl mb-4">Welcome to BigBinge!</h1>
+        <div class="welcome">
+            <h1 class="text-4xl mb-4">Welcome to <span id="span-big">Big</span><span id="span-binge">Binge</span>!</h1>
             <p class="mb-4">How would you like to find your next binge session?</p>
-        </header>
+        </div>
     
         <form id="searchForm" class="mb-8 sm:w-full md:w-3/4 lg:w-1/2 p-3 rounded-lg">
             <div class="flex flex-row mb-4 rounded-lg transition-all input-container">
