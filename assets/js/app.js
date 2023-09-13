@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cbSeriesRating = document.getElementById("cbSeriesRating");
   const cbEpisodeGenre = document.getElementById("cbEpisodeGenre");
 
+  const btnPrevSearch = document.getElementById("btnPrevSearch");
   const btnBinge = document.getElementById("btnBinge");
 
   let btnBingeDisplayed = false;
@@ -41,6 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+  btnPrevSearch.addEventListener("click", function () {
+    let localData = JSON.parse(localStorage.getItem("prev-search"));
+    if(localData.episodeQuantity) {
+      cbEpisodeQuantity.checked = true;
+      checkboxHandler(0, true);
+      nbrFields[0].value = localData.episodeQuantity;
+    }
+    if(localData.seriesRating) {
+      cbSeriesRating.checked = true;
+      checkboxHandler(1, true);
+      nbrFields[1].value = localData.seriesRating;
+    }
+    if(localData.episodeGenre) {
+      cbEpisodeGenre.checked = true;
+      checkboxHandler(2, true);
+      document.getElementById("ddEpisodeGenre").value = localData.episodeGenre;
+    }
+  });
 
   cbEpisodeQuantity.addEventListener("click", function () {
     checkboxHandler(0, cbEpisodeQuantity.checked);
@@ -160,6 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
         });
+
+        localStorage.setItem("prev-search", JSON.stringify({
+          episodeQuantity: episodeQuantity ? episodeQuantity : "",
+          seriesRating: seriesRating ? seriesRating : "",
+          episodeGenre: episodeGenre ? episodeGenre : ""
+        }));
       }
     } catch (error) {
       console.error("Fetch Error:", error);
