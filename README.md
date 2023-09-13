@@ -15,13 +15,13 @@ BigBinge is an interactive web application that helps you discover and explore T
 
 ## Try It Out
 
-Visit [BigBinge](https://your-github-username.github.io/BigBinge/) and start discovering your next binge-worthy TV show!
+Visit [BigBinge](https://bhansi.github.io/BigBinge/) and start discovering your next binge-worthy TV show!
 
 ## Technologies Used
 
 - 🌐 HTML, CSS (with Tailwind CSS), and JavaScript.
 - 🎥 [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) for TV show data.
-- 🎥 [The YouTube API V3]
+- 🎥 [The YouTube API V3](https://developers.google.com/youtube/v3/getting-started)
 - [Lemondrop Font by Nymphont](https://www.fontspace.com/lemondrop-font-f13573)
 - 🖼️ Icons from [FontAwesome](https://fontawesome.com/).
 
@@ -39,7 +39,7 @@ Visit [BigBinge](https://your-github-username.github.io/BigBinge/) and start dis
 
 ## Deployed on GitHub Pages
 
-BigBinge is deployed and accessible on [GitHub Pages](https://your-github-username.github.io/BigBinge/).
+BigBinge is deployed and accessible on [GitHub Pages](https://bhansi.github.io/BigBinge/).
 
 ## Contribution
 
