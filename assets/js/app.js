@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let btnBingeDisplayed = false;
 
-  const youtubeApiKey = "AIzaSyDLsx9z2GU3GChx9M7koQzscnb_44hEI7c"; // Replace with your YouTube API key
+  const youtubeApiKey = "AIzaSyDj9GTF0fJlIRpGCewUER9qvUQKh_p6P1A"; // Replace with your YouTube API key
 
   function isOptionChecked() {
     return cbEpisodeQuantity.checked || cbSeriesRating.checked || cbEpisodeGenre.checked;
