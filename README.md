@@ -15,7 +15,7 @@ BigBinge is an interactive web application that helps you discover and explore T
 
 ## Try It Out
 
-Visit [BigBinge](https://your-github-username.github.io/BigBinge/) and start discovering your next binge-worthy TV show!
+Visit [BigBinge](https://bhansi.github.io/BigBinge/) and start discovering your next binge-worthy TV show!
 
 ## Technologies Used
 
