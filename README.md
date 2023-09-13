@@ -1,6 +1,6 @@
 # BigBinge 🍿
 
-![BigBinge Logo](icon.png)
+![BigBinge Logo](./assets/images/logo-full.png)
 
 ## Overview
 
