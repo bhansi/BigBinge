@@ -21,7 +21,8 @@ Visit [BigBinge](https://your-github-username.github.io/BigBinge/) and start dis
 
 - 🌐 HTML, CSS (with Tailwind CSS), and JavaScript.
 - 🎥 [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api) for TV show data.
-🎥 [The YouTube API V3]
+- 🎥 [The YouTube API V3]
+- [Lemondrop Font by Nymphont](https://www.fontspace.com/lemondrop-font-f13573)
 - 🖼️ Icons from [FontAwesome](https://fontawesome.com/).
 
 ## Installation
