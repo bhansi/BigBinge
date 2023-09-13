@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputContainers = document.getElementsByClassName("input-container");
   const cbFields = document.getElementsByClassName("checkbox-field");
   const inputFields = document.getElementsByClassName("input-field");
+  const nbrFields = document.querySelectorAll("input[type=number]");
 
   const cbEpisodeQuantity = document.getElementById("cbEpisodeQuantity");
   const cbSeriesRating = document.getElementById("cbSeriesRating");
@@ -53,6 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
     checkboxHandler(2, cbEpisodeGenre.checked);
   });
 
+  nbrFields.forEach(function (nbrField) {
+    nbrField.addEventListener("focus", function () {
+      btnBinge.innerText = "Let's Binge";
+    });
+  });
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -73,7 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
       query += `&with_genres=${episodeGenre}`;
     }
     if (cbSeriesRating.checked) {
-      query += `&vote_average.gte=${seriesRating}`;
+      if(!seriesRating) {
+        btnBinge.innerText = "Please fill out the selected field(s).";
+        return;
+      } else {
+        query += `&vote_average.gte=${seriesRating}`;
+      }
     }
 
     try {
@@ -114,7 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (cbEpisodeQuantity.checked) {
-          shows = shows.filter((show) => show.total_episodes >= episodeQuantity);
+          if(!episodeQuantity) {
+            btnBinge.innerText = "Please fill out the selected field(s).";
+            break;
+          } else {
+            shows = shows.filter((show) => show.total_episodes >= episodeQuantity);
+          }
         }
 
         shows.forEach((show) => {
